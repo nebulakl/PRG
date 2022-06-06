@@ -60,14 +60,14 @@ namespace UnitConverter
                 comboBoxSource.Items.Clear();
                 comboBoxTarget.Items.Clear();
 
-                //populate dropdown menu
+                // populate dropdown menu
                 foreach (string unit in unitConverter.GetCurrentCategoryUnits())
                 {
                     comboBoxSource.Items.Add(unit);
                     comboBoxTarget.Items.Add(unit);
                 }
 
-                // this assume each category has at least 2 units
+                // this assumes each category has at least 2 units
                 comboBoxSource.SelectedIndex = 0;
                 comboBoxTarget.SelectedIndex = 1;
                 textBoxSource.Enabled = true;

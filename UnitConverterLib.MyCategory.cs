@@ -19,6 +19,9 @@ namespace UnitConverter
             }
         }
 
+        // define a base unit for this category
+        // during a conversion, the source unit will first convert to this base unit
+        // and then convert to the target unit
         private class MyBaseUnit : Unit
         {
             public MyBaseUnit()
@@ -37,7 +40,7 @@ namespace UnitConverter
             }
         }
 
-        // example unit when they have a offset relationship
+        // example unit when they have an offset relationship
         // e.g. °C <-> °F
         private class MyOffsetUnit : MyBaseUnit
         {
@@ -57,6 +60,7 @@ namespace UnitConverter
             }
         }
 
+        // you can also apply custom formulae
         private class MyComplexUnit : MyBaseUnit
         {
             public MyComplexUnit()
