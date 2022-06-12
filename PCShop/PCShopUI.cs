@@ -12,12 +12,16 @@ namespace PCShopRevisited
 
         public PCShopUI()
         {
-            _inventory.RegisterObserver(this);
-            InitializeComponent();
-
             _inventory.AddItem(ComponentType.CPU, "Core i3", 299.99);
             _inventory.AddItem(ComponentType.CPU, "Ryzen 5", 408.99);
             _inventory.AddItem(ComponentType.HDD, "Blue 4TB", 109.99);
+
+            InitializeComponent();
+            _inventory.RegisterObserver(this);
+            Update(ComponentType.CPU);
+            Update(ComponentType.HDD);
+            Update(ComponentType.RAM);
+
             _inventory.AddItem(ComponentType.HDD, "WD 16TB", 579.99);
             _inventory.AddItem(ComponentType.RAM, "OWC 16GB", 302.49);
             _inventory.AddItem(ComponentType.RAM, "OWC 8GB", 82.00);
